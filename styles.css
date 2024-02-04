@@ -130,3 +130,11 @@ body {
 .welcome p {
     font-weight: 500;
 }
+
+.welcome .img {
+    position: relative;
+}
+
+.welcome .img img {
+    width: 5rem;
+}
