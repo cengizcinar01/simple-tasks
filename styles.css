@@ -138,3 +138,10 @@ body {
 .welcome .img img {
     width: 5rem;
 }
+
+.welcome .img .backdrop {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
