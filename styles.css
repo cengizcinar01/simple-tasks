@@ -75,7 +75,6 @@ body {
     justify-content: center;
     background-color: #ffffff;
     font-family: "Inter", sans-serif;
-    color: #fff;
 }
 
 .wrapper {
@@ -110,7 +109,7 @@ body {
     z-index: -1;
     transform: translate(-50%);
     border-radius: 0 0 0 50%;
-    background-color: #1E1D32;
+    background-color: #a0d3d3;
 }
 
 .head-wrapper {
@@ -154,7 +153,7 @@ body {
     width: 3.8rem;
     height: 4rem;
     border-radius: 50%;
-    background-color: #f6f4e4;
+    background-color: #9cc4c4;
     z-index: -1;
 }
 
@@ -185,5 +184,21 @@ body {
 }
 
 .categories .category:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px 5px #00000030;
 }
+
+.category .left {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.category .left img {
+    width: 3rem;
+}
+
+.category .content h1 {
+    font-size: 1.5rem;
+}
+
