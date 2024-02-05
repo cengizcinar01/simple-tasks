@@ -1,4 +1,5 @@
 const wrapper = document.querySelector('.wrapper');
+const backBtn = document.querySelector('.back-btn');
 const menuBtn = document.querySelector('.menu-btn');
 
 const toggleScreen = () => {
@@ -6,3 +7,4 @@ const toggleScreen = () => {
 };
 
 menuBtn.addEventListener('click', toggleScreen);
+backBtn.addEventListener('click', toggleScreen);
