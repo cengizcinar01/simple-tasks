@@ -207,3 +207,21 @@ body {
     font-size: 0.8rem;
     opacity: 0.7;
 }
+
+.category .options {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+}
+
+.category:hover .options {
+    opacity: 1;
+    visibility: visible;
+}
+
+.category .toggle-btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.7;
+
+}
