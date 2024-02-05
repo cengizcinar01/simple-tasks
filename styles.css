@@ -75,6 +75,7 @@ body {
     justify-content: center;
     background-color: #ffffff;
     font-family: "Inter", sans-serif;
+    color: #fff;
 }
 
 .wrapper {
@@ -144,4 +145,9 @@ body {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    width: 3.8rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #f6f4e4;
+    z-index: -1;
 }
