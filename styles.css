@@ -107,6 +107,7 @@ body {
 .wrapper .screen {
     flex: 1;
     min-width: 100%;
+    transition: all 0.2s;
 }
 
 .wrapper.show-category .home-screen {
@@ -131,6 +132,7 @@ body {
     transform: translate(-50%);
     border-radius: 0 0 0 50%;
     background-color: #a0d3d3;
+    transition: all 0.2s;
 }
 
 .head-wrapper {
@@ -141,7 +143,7 @@ body {
     display: inline;
     font-size: 2rem;
     cursor: pointer;
-    color: white;
+    color: #303030;
 }
 
 .welcome {
@@ -244,4 +246,16 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     opacity: 0.7;
+}
+
+.category-screen .head-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category-screen .head-wrapper i {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #303030;
 }
