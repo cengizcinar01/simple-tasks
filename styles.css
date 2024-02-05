@@ -104,6 +104,23 @@ body {
     min-width: 100%;
 }
 
+.wrapper .screen {
+    flex: 1;
+    min-width: 100%;
+}
+
+.wrapper.show-category .home-screen {
+    transform: translateX(-100%);
+}
+
+.wrapper.show-category .category-screen {
+    transform: translateX(-100%);
+}
+
+.wrapper.show-category .screen-backdrop {
+    transform: translate(-50%, -60%);
+}
+
 .screen-backdrop {
     width: 135%;
     height: 25rem;
@@ -227,5 +244,4 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     opacity: 0.7;
-
 }
