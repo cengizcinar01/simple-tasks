@@ -267,3 +267,11 @@ body {
     align-items: center;
     gap: 1rem;
 }
+
+.category-details img {
+    width: 4rem;
+}
+
+.category-details .details p {
+    opacity: 0.6;
+}
