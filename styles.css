@@ -259,3 +259,11 @@ body {
     cursor: pointer;
     color: #303030;
 }
+
+.category-details {
+    padding: 0 30px;
+    margin-top: 7rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
