@@ -320,3 +320,18 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.task .checkmark i {
+    font-size: 1rem;
+    color: #303030;
+    font-weight: 600;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+.task .checkmark i:hover {
+    font-size: 1rem;
+    color: #303030;
+    font-weight: 600;
+    opacity: 1;
+}
