@@ -344,3 +344,8 @@ body {
     opacity: 1;
     color #fff:
 }
+
+.task input:checked~p {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
