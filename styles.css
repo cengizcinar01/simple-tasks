@@ -323,7 +323,7 @@ body {
 
 .task .checkmark i {
     font-size: 1rem;
-    color: #303030;
+    color: #ffffff;
     font-weight: 600;
     opacity: 0;
     transition: all 0.2s;
@@ -334,4 +334,13 @@ body {
     color: #303030;
     font-weight: 600;
     opacity: 1;
+}
+
+.task input:checked~.checkmark {
+    background-color: #303030;
+}
+
+.task input:checked~.checkmark i {
+    opacity: 1;
+    color #fff:
 }
