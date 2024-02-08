@@ -372,3 +372,18 @@ body {
     color: red;
     background-color: rgba(0, 0, 0, 0.1);
 }
+
+.add-task-btn {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9cc4c4;
+}
