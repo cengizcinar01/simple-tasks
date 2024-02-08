@@ -439,3 +439,10 @@ body {
     color: #666;
     margin-bottom: 5px;
 }
+
+.btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+}
