@@ -415,3 +415,17 @@ body {
     position: relative;
     margin-bottom: 20px;
 }
+
+.input-group input,
+.input-group label {
+    display: block;
+    width: 100%;
+}
+
+.input-group input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
