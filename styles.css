@@ -456,3 +456,8 @@ body {
     font-weight: 600;
     cursor: pointer;
 }
+
+.btns button.add-btn {
+    background-color:#a0d3d3;
+    color: #303030;
+}
