@@ -377,8 +377,8 @@ body {
     position: absolute;
     bottom: 1rem;
     right: 1rem;
-    width: 3rem;
-    height: 3rem;
+    width: 5rem;
+    height: 4rem;
     font-size: 3rem;
     border-radius: 50%;
     cursor: pointer;
@@ -386,4 +386,14 @@ body {
     align-items: center;
     justify-content: center;
     color: #9cc4c4;
+    transition: all 0.2s;
+}
+
+.add-task-btn:hover {
+    transform: scale(1.1);
+}
+
+.add-task-btn i {
+    width: 2rem;
+    color: #303030;
 }
