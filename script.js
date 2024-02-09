@@ -27,6 +27,34 @@ let categories = [
         title: 'Personal',
         img: 'boss.png',
     },
+    {
+        title: 'Work',
+        img: 'suitcase.png',
+    },
+    {
+        title: 'Shopping',
+        img: 'shopping-cart.png',
+    },
+    {
+        title: 'Coding',
+        img: 'programming.png',
+    },
+    {
+        title: 'Health',
+        img: 'better-health.png',
+    },
+    {
+        title: 'Fitness',
+        img: 'weightlifting.png',
+    },
+    {
+        title: 'Education',
+        img: 'reading.png',
+    },
+    {
+        title: 'Finance',
+        img: 'salary.png',
+    },
 ];
 
 let tasks = [
