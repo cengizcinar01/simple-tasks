@@ -404,6 +404,7 @@ body {
     left: 0;
     width: 100%;
     padding: 20px 30px;
+    transition: all 0.4s;
 }
 
 .add-task.active {
@@ -486,6 +487,7 @@ body {
     backdrop-filter: blur(5px);
     background-color: #00000023;
     visibility: hidden;
+    transition: all 0.4s;
 }
 
 .black-backdrop.active {
