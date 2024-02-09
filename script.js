@@ -29,12 +29,39 @@ let categories = [
     },
 ];
 
+let tasks = [
+    {
+        id: 1,
+        task: 'Schedule a dentist appointment for next Monday',
+        category: 'Personal',
+        completed: false,
+    },
+    {
+        id: 2,
+        task: 'Buy groceries for the week including fresh vegetables',
+        category: 'Personal',
+        completed: false,
+    },
+    {
+        id: 3,
+        task: 'Pay the electricity bill online before Friday',
+        category: 'Personal',
+        completed: false,
+    },
+    {
+        id: 4,
+        task: 'Read two chapters of the new novel tonight',
+        category: 'Personal',
+        completed: false,
+    },
+];
+
 const categoriesContainer = document.querySelector('.categories');
 
 const renderCategories = () => {
     categoriesContainer.innerHTML = '';
     categories.forEach((category) => {
-        const categoryTask = task.filter((task) => task.category.toLowerCase() === category.title.toLowerCase());
+        const categoryTasks = tasks.filter((task) => task.category.toLowerCase() === category.title.toLowerCase());
         const div = document.createElement('div');
         div.classList.add('category');
         div.innerHTML = `
@@ -51,6 +78,8 @@ const renderCategories = () => {
         </div>
     </div>
         `;
+
+        categoriesContainer.appendChild(div);
     });
 };
 
