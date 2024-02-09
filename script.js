@@ -21,3 +21,37 @@ const toggleAddTaskForm = () => {
 
 addTaskBtn.addEventListener('click', toggleAddTaskForm);
 blackBackdrop.addEventListener('click', toggleAddTaskForm);
+
+let categories = [
+    {
+        title: 'Personal',
+        img: 'boss.png',
+    },
+];
+
+const categoriesContainer = document.querySelector('.categories');
+
+const renderCategories = () => {
+    categoriesContainer.innerHTML = '';
+    categories.forEach((category) => {
+        const categoryTask = task.filter((task) => task.category.toLowerCase() === category.title.toLowerCase());
+        const div = document.createElement('div');
+        div.classList.add('category');
+        div.innerHTML = `
+        <div class="left">
+        <img src="img/${category.img}" alt="${category.title}">
+        <div class="content">
+            <h1>${category.title}</h1>
+            <p>${categoryTasks.length} Tasks</p>
+        </div>
+    </div>
+    <div class="options">
+        <div class="toggle-btn">
+            <i class="bx bx-dots-vertical-rounded"></i>
+        </div>
+    </div>
+        `;
+    });
+};
+
+renderCategories();
