@@ -466,6 +466,7 @@ body {
 }
 
 .btns button {
+    z-index: 1;
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
