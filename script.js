@@ -156,7 +156,15 @@ const renderTasks = () => {
             </div>
             `;
 
-            label.innerHTML = 
+            label.innerHTML = `
+            <span class="checkmark">
+            <i class="bx bx-check"></i>
+            </span>
+            <p>${task.task}</p>
+            `;
+            label.prepend(checkbox);
+            div.prepend(label);
+            tasksContainer.appendChild(div);
         });
     }
 };
