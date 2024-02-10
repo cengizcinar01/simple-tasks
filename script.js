@@ -89,6 +89,7 @@ let selectedCategory = categories[0];
 const categoriesContainer = document.querySelector('.categories');
 const categoryTitle = document.querySelector('.category-title');
 const categoryTasks = document.querySelector('.category-tasks');
+const categoryImg = document.querySelector('#category-img');
 
 const renderCategories = () => {
     categoriesContainer.innerHTML = '';
@@ -100,6 +101,7 @@ const renderCategories = () => {
             wrapper.classList.add('show-category');
             selectedCategory = category;
             categoryTitle.innerHTML = category.title;
+            categoryImg.src = `img/${category.img}`;
         });
         div.innerHTML = `
         <div class="left">
