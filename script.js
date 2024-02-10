@@ -214,7 +214,18 @@ addBtn.addEventListener('click', () => {
 
     if (task === '') {
         alert('Please enter a task');
-        return;
+    } else {
+        const newTask = {
+            id: tasks.length + 1,
+            task,
+            category,
+            completed: false,
+        };
+        tasks.push(newTask);
+        taskInput.value = '';
+        saveLocal();
+        toggleAddTaskForm();
+        renderTasks();
     }
 });
 categories.forEach((category) => {
