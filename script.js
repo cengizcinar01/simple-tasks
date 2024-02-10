@@ -151,6 +151,13 @@ const renderTasks = () => {
             checkbox.type = 'checkbox';
             checkbox.id = task.id;
             checkbox.checked = task.completed;
+
+            checkbox.addEventListener('change', () => {
+                const index = tasks.findIndex((t) => t.id === task.id);
+                tasks[index].completed = !tasks[index].completed;
+                saveLocal();
+            });
+
             div.innerHTML = `
             <div class="delete">
             <i class="bx bxs-trash"></i>
@@ -170,6 +177,20 @@ const renderTasks = () => {
     }
 };
 
+// save-get from local storage
+const saveLocal = () => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+};
+
+const getLocal = () => {
+    const localTasks = JSON.parse(localStorage.getItem('tasks'));
+
+    if (localTasks) {
+        tasks = localTasks;
+    }
+};
+
+getLocal();
 calculateTotal();
 renderCategories();
 renderTasks();
