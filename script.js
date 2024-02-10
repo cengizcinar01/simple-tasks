@@ -182,6 +182,9 @@ const renderTasks = () => {
                 renderTasks();
             });
         });
+
+        renderCategories();
+        calculateTotal();
     }
 };
 
@@ -197,6 +200,13 @@ const getLocal = () => {
         tasks = localTasks;
     }
 };
+const categorySelect = document.querySelector('#category-select');
+categories.forEach((category) => {
+    const option = document.createElement('option');
+    option.value = category.title.toLowerCase();
+    option.textContent = category.title;
+    categorySelect.appendChild(option);
+});
 
 getLocal();
 calculateTotal();
