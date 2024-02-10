@@ -110,6 +110,7 @@ const renderCategories = () => {
             categoryTitle.innerHTML = category.title;
             categoryImg.src = `img/${category.img}`;
             calculateTotal();
+            renderTasks();
         });
         div.innerHTML = `
         <div class="left">
