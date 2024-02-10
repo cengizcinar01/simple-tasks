@@ -92,6 +92,9 @@ const renderCategories = () => {
         const categoryTasks = tasks.filter((task) => task.category.toLowerCase() === category.title.toLowerCase());
         const div = document.createElement('div');
         div.classList.add('category');
+        div.addEventListener('click', () => {
+            wrapper.classList.add('show-category');
+        });
         div.innerHTML = `
         <div class="left">
         <img src="img/${category.img}" alt="${category.title}">
