@@ -173,6 +173,14 @@ const renderTasks = () => {
             label.prepend(checkbox);
             div.prepend(label);
             tasksContainer.appendChild(div);
+
+            const deleteBtn = div.querySelector('.delete');
+            deleteBtn.addEventListener('click', () => {
+                const index = tasks.findIndex((t) => t.id === task.id);
+                tasks.splice(index, 1);
+                saveLocal();
+                renderTasks();
+            });
         });
     }
 };
