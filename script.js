@@ -93,9 +93,10 @@ const categoryImg = document.querySelector('#category-img');
 const totaltasks = document.querySelector('.totalTasks');
 
 const calculateTotal = () => {
-    const categoryTasks = tasks.filter((task) => task.category.toLowerCase() === selectedCategory.title.toLowerCase());
-    totalCategoryTasks.innerHTML = `${categoryTasks.length} Tasks`;
-    totaltasks.innerHTML = tasks.length;
+    const normalizedSelectedCategory = selectedCategory.title.toLowerCase();
+    const categoryTasksCount = tasks.filter((task) => task.category.toLowerCase() === normalizedSelectedCategory).length;
+    totalCategoryTasks.innerHTML = `${categoryTasksCount} Tasks`;
+    totaltasks.innerHTML = `${tasks.length}`;
 };
 
 const renderCategories = () => {
