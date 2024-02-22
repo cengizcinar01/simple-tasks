@@ -138,58 +138,49 @@ const selectCategory = (category) => {
 const tasksContainer = document.querySelector('.tasks');
 
 const renderTasks = () => {
-    tasksContainer.innerHTML = '';
-    const categoryTasks = tasks.filter((task) => task.category.toLowerCase() === selectedCategory.title.toLowerCase());
-    if (categoryTasks.length === 0) {
-        tasksContainer.innerHTML = `
-        <p class="no-task">No tasks for this category</p> 
-        `;
-    } else {
-        categoryTasks.forEach((task) => {
-            const div = document.createElement('div');
-            div.classList.add('task-wrapper');
-            const label = document.createElement('label');
-            label.classList.add('task');
-            label.setAttribute('for', task.id);
-            const checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.id = task.id;
-            checkbox.checked = task.completed;
+    const normalizedSelectedCategory = selectedCategory.title.toLowerCase();
+    const categoryTasks = tasks.filter((task) => task.category.toLowerCase() === normalizedSelectedCategory);
 
-            checkbox.addEventListener('change', () => {
-                const index = tasks.findIndex((t) => t.id === task.id);
-                tasks[index].completed = !tasks[index].completed;
-                saveLocal();
-            });
+    tasksContainer.innerHTML = categoryTasks.length === 0 ? `<p class="no-task">No tasks for this category</p>` : categoryTasks.map((task) => createTaskHtml(task)).join('');
 
-            div.innerHTML = `
-            <div class="delete">
-            <i class="bx bxs-trash"></i>
-            </div>
-            `;
+    addTaskEventListeners();
 
-            label.innerHTML = `
-            <span class="checkmark">
-            <i class="bx bx-check"></i>
-            </span>
+    renderCategories();
+    calculateTotal();
+};
+
+const createTaskHtml = (task) => {
+    return `
+    <div class="task-wrapper">
+        <label class="task" for="${task.id}">
+            <input type="checkbox" id="${task.id}" ${task.completed ? 'checked' : ''}>
+            <span class="checkmark"><i class="bx bx-check"></i></span>
             <p>${task.task}</p>
-            `;
-            label.prepend(checkbox);
-            div.prepend(label);
-            tasksContainer.appendChild(div);
+        </label>
+        <div class="delete"><i class="bx bxs-trash"></i></div>
+    </div>
+    `;
+};
 
-            const deleteBtn = div.querySelector('.delete');
-            deleteBtn.addEventListener('click', () => {
-                const index = tasks.findIndex((t) => t.id === task.id);
-                tasks.splice(index, 1);
-                saveLocal();
-                renderTasks();
-            });
-        });
+const addTaskEventListeners = () => {
+    document.querySelectorAll('.task-wrapper').forEach((taskWrapper, index) => {
+        const checkbox = taskWrapper.querySelector('input[type="checkbox"]');
+        checkbox.addEventListener('change', () => toggleTaskCompleted(index));
 
-        renderCategories();
-        calculateTotal();
-    }
+        const deleteBtn = taskWrapper.querySelector('.delete');
+        deleteBtn.addEventListener('click', () => deleteTask(index, taskWrapper));
+    });
+};
+
+const toggleTaskCompleted = (index) => {
+    tasks[index].completed = !tasks[index].completed;
+    saveLocal();
+};
+
+const deleteTask = (index, taskWrapper) => {
+    tasks.splice(index, 1);
+    taskWrapper.remove();
+    saveLocal();
 };
 
 // save-get from local storage
