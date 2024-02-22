@@ -102,34 +102,37 @@ const calculateTotal = () => {
 const renderCategories = () => {
     categoriesContainer.innerHTML = '';
     categories.forEach((category) => {
-        const categoryTasks = tasks.filter((task) => task.category.toLowerCase() === category.title.toLowerCase());
+        const categoryTaskCount = tasks.filter((task) => task.category.toLowerCase() === category.title.toLowerCase()).length;
         const div = document.createElement('div');
-        div.classList.add('category');
-        div.addEventListener('click', () => {
-            wrapper.classList.add('show-category');
-            selectedCategory = category;
-            categoryTitle.innerHTML = category.title;
-            categoryImg.src = `img/${category.img}`;
-            calculateTotal();
-            renderTasks();
-        });
+        div.className = 'category';
         div.innerHTML = `
-        <div class="left">
-        <img src="img/${category.img}" alt="${category.title}">
-        <div class="content">
-            <h1>${category.title}</h1>
-            <p>${categoryTasks.length} Tasks</p>
-        </div>
-    </div>
-    <div class="options">
-        <div class="toggle-btn">
-            <i class="bx bx-dots-vertical-rounded"></i>
-        </div>
-    </div>
+            <div class="left">
+                <img src="img/${category.img}" alt="${category.title}">
+                <div class="content">
+                    <h1>${category.title}</h1>
+                    <p>${categoryTaskCount} Tasks</p>
+                </div>
+            </div>
+            <div class="options">
+                <div class="toggle-btn">
+                    <i class="bx bx-dots-vertical-rounded"></i>
+                </div>
+            </div>
         `;
+
+        div.addEventListener('click', () => selectCategory(category));
 
         categoriesContainer.appendChild(div);
     });
+};
+
+const selectCategory = (category) => {
+    wrapper.classList.add('show-category');
+    selectedCategory = category;
+    categoryTitle.innerHTML = category.title;
+    categoryImg.src = `img/${category.img}`;
+    calculateTotal();
+    renderTasks();
 };
 
 const tasksContainer = document.querySelector('.tasks');
