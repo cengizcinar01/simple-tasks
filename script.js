@@ -204,25 +204,30 @@ const taskInput = document.querySelector('#task-input'); // Punkt entfernt
 cancelBtn.addEventListener('click', toggleAddTaskForm);
 
 addBtn.addEventListener('click', () => {
-    const task = taskInput.value;
+    const task = taskInput.value.trim();
     const category = categorySelect.value;
 
-    if (task === '') {
+    if (!task) {
         alert('Please enter a task');
-    } else {
-        const newTask = {
-            id: tasks.length + 1,
-            task,
-            category,
-            completed: false,
-        };
-        tasks.push(newTask);
-        taskInput.value = '';
-        saveLocal();
-        toggleAddTaskForm();
-        renderTasks();
+        return;
     }
+
+    const newTaskId = Date.now();
+
+    const newTask = {
+        id: newTaskId,
+        task,
+        category,
+        completed: false,
+    };
+
+    tasks.push(newTask);
+    taskInput.value = '';
+    saveLocal();
+    toggleAddTaskForm();
+    renderTasks();
 });
+
 categories.forEach((category) => {
     const option = document.createElement('option');
     option.value = category.title.toLowerCase();
